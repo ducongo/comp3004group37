@@ -1,5 +1,6 @@
 package group37_demo;
 
+import java.util.ArrayList;
 
 public class Game {
 	private boolean gameRunning = false;
@@ -7,15 +8,28 @@ public class Game {
 	Player player1;
 	Board board;
 	
-	public Game(Player p1, Deck deck, Board board) {
-		this.board = new Board();
-		this.player1 = p1;
-		this.deck = new Deck();
+	public Game() {
+
 		startGame();
 	}
 	
 	private void startGame() {
 		gameRunning = true;
+		
+		deck = new Deck();
+		deck.shuffleTiles();
+		
+		board = new Board();
+		// need add initBoard in board class
+		board.initBoard();
+		
+		
+		// add player
+		Player player1 = new Player();
+
+		
+		
+		//deck.dealTile();
 	}
 	
 	public boolean isRunning() {return this.gameRunning;}
