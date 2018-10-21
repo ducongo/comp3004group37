@@ -35,19 +35,27 @@ public class Board {
 	@Override
 	 public String toString() { 
 		String s = "";
+		int biggestSet = 0; //this variable will hold the biggest set size for matrix formatting
 		
 		for (int i = 0; i < board.size(); i++) {
+			
+			if(i < 10) {
+				s += "0" + Integer.toString(i) + "| ";//+1
+			}else {
+				s += Integer.toString(i) + "| ";
+			}
+			
 			for (int j = 0; j < board.get(i).size(); j++) {
-				s += Integer.toString(i) + "|" + board.get(i).get(j).toString() + " ";
+				s += board.get(i).get(j).toString() + "  ";//+2
 			}
 			s += "\n";
 		}
-		s += "______________________________________________________________________________________________________________________";
 		
-		for(int i = 0; i < board.size(); i++) {
-			s += Integer.toString(i) + "[       ]";
+		for(int i = 0; i < ((biggestSet * 7) + (biggestSet * 2) + 1); i++) {
+			s+="_";
 		}
 		
+				
 		 return s; 
 		 
 	 } 

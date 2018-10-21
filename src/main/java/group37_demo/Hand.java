@@ -39,12 +39,43 @@ public class Hand {
 		Collections.sort(tiles);
 	}
 	
+	
 	@Override
 	 public String toString() { 
 		
+		String s = "";
 		
+		for (int i = 0; i < tiles.size(); i++) {
+			s += tiles.get(i).toString() + "  ";			
+		}
 		
-		 return "";
+		 return s;
 	 } 
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
