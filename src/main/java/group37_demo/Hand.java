@@ -35,6 +35,10 @@ public class Hand {
 		return meld;
 	}
 	
+	public void sort() {
+		Collections.sort(tiles);
+	}
+	
 	@Override
 	 public String toString() { 
 		
