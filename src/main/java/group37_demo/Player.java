@@ -5,30 +5,32 @@ import java.util.ArrayList;
 
 public class Player {
 	
-	protected ArrayList<Tile> hand = new ArrayList<Tile>();
+	protected Hand hand;
+	
+	public Player(ArrayList<Tile> tiles) {
+		hand = new Hand(tiles);
+	}
 	
 	public boolean handIsEmpty() {
 		
-		if (hand.size() < 1) {
-			return true;
-		}
-		return false;
+		return hand.isEmpty();
 	}
 	
 	public void hitMe(Tile newCard) {
-		hand.add(newCard);
+		hand.addTile(newCard);
 	}
 	
 	
 	//this function is
 	public ArrayList<Tile>  createSet(ArrayList<Integer> indexes) {
-		ArrayList<Tile> set = new ArrayList<Tile>();
 		
-		for (int i = 0; i < set.size(); i++) {
-			set.add(hand.get(indexes.get(i)));
-		}
-		
-		return set;
+		return this.hand.createMeld(indexes);
 	}
+	
+	@Override
+	 public String toString() { 
+		
+		 
+	 } 
 	
 }
