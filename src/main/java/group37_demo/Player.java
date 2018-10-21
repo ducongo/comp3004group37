@@ -20,6 +20,10 @@ public class Player {
 		hand.addTile(newCard);
 	}
 	
+	public void sortHand() {
+		hand.sort();
+	}
+	
 	
 	//this function is
 	public ArrayList<Tile>  createSet(ArrayList<Integer> indexes) {
