@@ -43,6 +43,6 @@ public class Deck {
 		Collections.shuffle(tileOfDeck);
 	}
 }
-=======
+
 
 
