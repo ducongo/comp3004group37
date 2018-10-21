@@ -1,6 +1,7 @@
 package group37_demo;
+import java.util.Comparator;
 
-public class Tile {
+public class Tile implements Comparable<Tile>{
 	private int value;
 	private TileValue color;
 	
@@ -18,5 +19,15 @@ public class Tile {
 
 		 return String.format("[" + this.value + " " + this.color + "]"); // [10 REd]
 
-	 } 
+	 }
+
+	public int compareTo(Tile that) {
+		Integer thisValue = value;
+		Integer thatValue = value;
+		int compared = thisValue.compareTo(thatValue);
+		if(compared == 0) {
+			return this.color.toString().compareTo(that.color.toString());
+		}
+		return compared;
+	} 
 }
