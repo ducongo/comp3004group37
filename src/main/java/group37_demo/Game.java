@@ -10,10 +10,10 @@ public class Game {
 	
 	public Game() {
 
-		startGame();
+		startGame(null);
 	}
 	
-	private void startGame() {
+	private void startGame(ArrayList<Tile> group) {
 		gameRunning = true;
 		
 		deck = new Deck();
@@ -21,17 +21,35 @@ public class Game {
 		
 		board = new Board();
 		// need add initBoard in board class
-		board.initBoard();
-		
+		//board.initBoard();
+		board.addGroup(group);
 		
 		// add player
-		Player player1 = new Player();
+		player1 = new Player(group);
 
 		
 		
-		//deck.dealTile();
+		
+		
 	}
 	
+	/*
+	public void switchTurn() {
+		for (Player p : players) {
+			p.toggleTurn();
+		}
+		whoseTurn();
+	}
+	
+	public void whoseTurn() {
+
+		for (Player p : players) {
+			if (p.isMyTurn()){
+				infoPanel.updateText(p.getName() + "'s Turn");
+				System.out.println(p.getName() + "'s Turn");
+			}
+	}
+	*/
 	public boolean isRunning() {return this.gameRunning;}
 	
 	public Deck getDeck() {return this.deck;}
