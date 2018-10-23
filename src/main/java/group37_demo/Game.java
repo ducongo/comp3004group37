@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Game {
 	private boolean gameRunning = false;
 	private Deck deck;
-	Player player1;
+	Player player1, player2;
 	Board board;
 	
 	public Game() {
@@ -25,7 +25,8 @@ public class Game {
 		board.addGroup(group);
 		
 		// add player
-		player1 = new Player(group);
+		player1 = new Player(group, "human");
+		player2 = new Player(group, "AI1");
 
 		
 		
@@ -42,10 +43,8 @@ public class Game {
 	}
 	
 	public void whoseTurn() {
-
 		for (Player p : players) {
 			if (p.isMyTurn()){
-
 				System.out.println(p.getName() + "'s Turn");
 			}
 	}
@@ -53,6 +52,7 @@ public class Game {
 	
 	public void displayHands() {
 		player1.toString();
+		player2.toString();
 	}
 	public boolean isRunning() {return this.gameRunning;}
 	
@@ -68,4 +68,3 @@ public class Game {
 	
 	
 }
-
