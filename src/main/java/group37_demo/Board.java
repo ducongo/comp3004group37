@@ -32,6 +32,7 @@ public class Board {
 		
 	}
 	
+	
 	@Override
 	 public String toString() { 
 		String s = "";

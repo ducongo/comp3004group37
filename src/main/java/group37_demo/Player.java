@@ -6,22 +6,32 @@ import java.util.ArrayList;
 public class Player {
 	
 	protected Hand hand;
+	protected String name;
 	
-	public Player(ArrayList<Tile> tiles) {
+	
+	public Player(ArrayList<Tile> tiles, String name) {
 		hand = new Hand(tiles);
+		this.name = name;
 	}
 	
+
 	public boolean handIsEmpty() {
 		
 		return hand.isEmpty();
 	}
 	
-	public void hitMe(Tile newCard) {
+	public void addCardToHand(Tile newCard) {
 		hand.addTile(newCard);
 	}
 	
+	
+	
 	public void sortHand() {
 		hand.sort();
+	}
+	
+	public int getHandSize(){
+		return hand.getSize();
 	}
 	
 	
