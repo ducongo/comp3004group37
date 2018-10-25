@@ -3,10 +3,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Hand {
-	protected ArrayList<Tile> tiles = new ArrayList<Tile>();
+	protected ArrayList<Tile> tiles;
 	
 	public Hand(ArrayList<Tile> tiles) {
-		Collections.copy(this.tiles,tiles);
+		this.tiles = new ArrayList<Tile>(tiles);
+		//Collections.copy(this.tiles,tiles);
 	}
 	
 	public int getSize() {
@@ -28,8 +29,9 @@ public class Hand {
 	public ArrayList<Tile> createMeld(ArrayList<Integer> indexes){
 		ArrayList<Tile> meld = new ArrayList<Tile>();
 				
-		for (int i = 0; i < meld.size(); i++) {
-			meld.add(tiles.get(indexes.get(i)));
+		for (int i = 0; i < indexes.size(); i++) {
+			//tiles.get(indexes.get(i))
+			meld.add(tiles.remove(indexes.get(i).intValue()));
 		}
 			
 		return meld;

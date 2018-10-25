@@ -35,11 +35,14 @@ public class Board {
 	
 	@Override
 	 public String toString() { 
+		System.out.println("PRINTING BOARD");
+		System.out.println("Board.size() = " + board.size());
+		//stem.out.println("Board.get(0).size() = " + board.get(0));
 		String s = "";
 		int biggestSet = 0; //this variable will hold the biggest set size for matrix formatting
 		
 		for (int i = 0; i < board.size(); i++) {
-			
+			System.out.println("INNER LOOP 1");
 			if(i < 10) {
 				s += "0" + Integer.toString(i) + "| ";//+1
 			}else {
@@ -47,6 +50,7 @@ public class Board {
 			}
 			
 			for (int j = 0; j < board.get(i).size(); j++) {
+				System.out.println("INNER LOOP 1");
 				s += board.get(i).get(j).toString() + "  ";//+2
 			}
 			s += "\n";

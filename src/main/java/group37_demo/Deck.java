@@ -16,10 +16,12 @@ public class Deck {
 		
 		for (int j = 0; j < 4; j++) {	
 			
-			for (int i = 0; i < 13; i++) {
+			for (int i = 1; i < 14; i++) {
 				
 				Tile tile = new Tile(i, colors[j]);
+				//System.out.println(tile.toString());
 				tileOfDeck.add(tile);
+				
 			}
 		}
 		
@@ -36,7 +38,7 @@ public class Deck {
 	
 	public Tile dealTile() {
 
-		return tileOfDeck.get(0);
+		return tileOfDeck.remove(0);
 	}
 	
 	public void shuffleTiles() {

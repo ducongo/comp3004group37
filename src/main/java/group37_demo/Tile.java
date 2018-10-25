@@ -17,10 +17,24 @@ public class Tile implements Comparable<Tile>{
 	 @Override
 	 public String toString() { 
 		 
-		 if (this.value < 10) {
-			 return String.format("[0" + this.value + " " + this.color + "]");
+		 String color = "";
+		 if (this.color.toString() == "RED"){
+			 color = "RE";
+		 }else if (this.color.toString() == "BLUE"){
+			 color = "BL";
+		 }else if (this.color.toString() == "GREEN"){
+			 color = "GR";
+		 }else{
+			 color = "BK";
 		 }
-		 return String.format("[" + this.value + " " + this.color + "]"); // [10 REd]
+		 
+		 
+		 if (this.value < 10) {
+			 
+			 
+			 return String.format("[0" + this.value + " " + color + "]");
+		 }
+		 return String.format("[" + this.value + " " + color + "]"); // [10 REd]
 
 	 }
 
