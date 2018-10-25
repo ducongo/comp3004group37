@@ -49,6 +49,10 @@ public class Board {
 				s += Integer.toString(i) + "| ";
 			}
 			
+			if (board.get(i).size() > biggestSet){
+				biggestSet = board.get(i).size();
+			}
+			
 			for (int j = 0; j < board.get(i).size(); j++) {
 				System.out.println("INNER LOOP 1");
 				s += board.get(i).get(j).toString() + "  ";//+2
@@ -60,7 +64,13 @@ public class Board {
 			s+="_";
 		}
 		
-				
+		for(int i = 0; i < ((biggestSet * 7) + (biggestSet * 2) + 1); i++) {
+			s+="_";
+		}
+			//00 | [07 BL]  [10 BK]  [10 BK]  [10 BK]
+			//01 | [07 BL]  [10 BK]  [10 BK]  [10 BK]
+			//---------------------------------------
+			//   | [  01 ]  [10 BK]  [10 BK]  [10 BK]  
 		 return s; 
 		 
 	 } 

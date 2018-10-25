@@ -48,7 +48,7 @@ public class Game {
 			if (turnIndex == 0) {
 				
 				while(true) {
-					board.toString();
+					System.out.println(board.toString());
 					//display number of tiles remaining for each players starting with player 1
 					System.out.println("player: " + players.get(turnIndex) + " Number of remaining tiles: " + players.get(turnIndex).getHandSize());
 									
@@ -68,7 +68,7 @@ public class Game {
 							this.board.split(this.splitBoard().get(0).intValue(), this.splitBoard().get(1).intValue());
 							
 						}else if (n == 3){
-							this.board.toString();
+							System.out.println(board.toString());
 							players.get(turnIndex).toString();
 						//call getPlayrsindex
 							this.board.splitRemove(this.splitBoard().get(0).intValue(), this.splitBoard().get(1).intValue(), this.players.get(turnIndex).createSet(this.addToBoard()));
@@ -76,7 +76,7 @@ public class Game {
 							
 						}else if (n == 4){
 							
-							board.toString();
+							System.out.println(board.toString());
 							
 						}else if (n == 5){
 							
