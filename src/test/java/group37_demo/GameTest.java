@@ -1,20 +1,20 @@
-
 package group37_demo;
 
-import static org.junit.Assert.*;
+import junit.framework.TestCase;
 
-public class GameTest{
+public class GameTest extends TestCase{
 	
-	@Test
 	public void testGameInitialization() {
 		Game g = new Game();
-		assertTrue(g.isRunning());
+		assertTrue("check if game starts", g.isRunning());
 	}
 	
-	@Test
 	public void testDeck() {
 		Game g = new Game();
-		assertNotNull(g.getDeck());
+		assertNotNull("check if player gets deck", g.getDeck());
 	}
+	
+	
+	
 }
 
