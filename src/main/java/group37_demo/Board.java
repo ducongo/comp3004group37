@@ -1,14 +1,21 @@
 package group37_demo;
 import java.util.ArrayList;
 
-public class Board {
+public class Board implements Subject{
 	
 
 	protected ArrayList<ArrayList<Tile>> board = new ArrayList<ArrayList<Tile>>();
+	private ArrayList<Observer> observers;
 	
+	public Board() {
+		observers = new ArrayList<Observer>();
+	}
 	
 	public void addGroup(ArrayList<Tile> group) {
 		board.add(group);
+		this.notifyObservers();
+		this.highlightTiles(group, "*");
+		this.boardChanged();
 	}
 	
 	
@@ -21,15 +28,46 @@ public class Board {
 		}
 		
 		board.add(newGroup);
+		this.highlightTiles(newGroup, "!");
+		this.boardChanged();
 		
 	}
 	
 	public void splitRemove(int indexX, int indexY, ArrayList<Tile> newGroup) {
 		
-		newGroup.add(board.get(indexY).remove(indexX));
+		this.highlightTiles(newGroup, "*");
+				
+		ArrayList<Tile> tempGroup = new ArrayList<Tile>();
 		
+		for (int i = indexX; i < board.get(indexY).size(); i++) {
+			tempGroup.add(board.get(indexY).remove(i));
+		}
+		
+		this.highlightTiles(tempGroup, "!");
+		
+		newGroup.add(tempGroup.remove(0));
+		
+		board.add(tempGroup);
 		board.add(newGroup);
+		this.boardChanged();
 		
+	}
+	
+	private void highlightTiles(ArrayList<Tile> tiles, String state) {
+		
+		for (int i = 0; i < tiles.size(); i++) {
+			tiles.get(i).changeState(state);
+		}
+	}
+	
+	private void unHighlightTiles() {
+		
+		for (int i = 0; i < board.size(); i++) {
+			
+			for (int j = 0; j < board.get(i).size(); j++) {
+				board.get(i).get(j).changeState(" ");
+			}
+		}
 	}
 	
 	
@@ -42,7 +80,7 @@ public class Board {
 		int biggestSet = 0; //this variable will hold the biggest set size for matrix formatting
 		
 		for (int i = 0; i < board.size(); i++) {
-			System.out.println("INNER LOOP 1");
+			
 			if(i < 10) {
 				s += "0" + Integer.toString(i) + "| ";//+1
 			}else {
@@ -54,7 +92,7 @@ public class Board {
 			}
 			
 			for (int j = 0; j < board.get(i).size(); j++) {
-				System.out.println("INNER LOOP 1");
+				
 				s += board.get(i).get(j).toString() + "  ";//+2
 			}
 			s += "\n";
@@ -71,8 +109,42 @@ public class Board {
 			//01 | [07 BL]  [10 BK]  [10 BK]  [10 BK]
 			//---------------------------------------
 			//   | [  01 ]  [10 BK]  [10 BK]  [10 BK]  
-		 return s; 
+		this.unHighlightTiles();
+		return s; 
 		 
+	 }
+
+
+	public void registerObserver(Observer o) {
+		// TODO Auto-generated method stub
+		observers.add(o);
+		
+	}
+
+
+	public void removeObserver(Observer o) {
+		// TODO Auto-generated method stub
+		int i = observers.indexOf(o);
+		
+		if (i >= 0) {
+			observers.remove(i);
+		}
+		
+	}
+
+
+	public void notifyObservers() {
+		// TODO Auto-generated method stub
+		
+		for (int i = 0; i < observers.size(); i++) {
+			Observer observer = (Observer)observers.get(i);
+			observer.update(this);
+		}
+		
+	} 
+	
+	 private void boardChanged() {
+		 notifyObservers();
 	 } 
 	
 }

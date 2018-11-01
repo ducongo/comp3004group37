@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 
 
-public class Player {
+public class Player{
 	
 	protected Hand hand;
 	protected String name;
@@ -45,6 +45,14 @@ public class Player {
 	 public String toString() { 
 		
 		 return hand.toString();
-	 } 
+	 }
+
+	
+	//this function should only be implemented by sub classes that have AI methods to allow them to play if it's a human player then there's no need
+	public void play() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 }

@@ -27,20 +27,23 @@ public class Game {
 		
 		// add player
 		
-		for (int i = 0; i < 1; i++){
+		for (int i = 0; i < 3; i++){
 			ArrayList<Tile> group = new ArrayList<Tile>();
 			for (int j = 0; j < 14; j++){
 				group.add(deck.dealTile());
 			}
-			Player p = new Player(group, "human");
-			players.add(p);
+			
+			if (i == 1) {
+				Player p = new Player(group, "human");
+				players.add(p);
+			}else {
+				Aiplayer p = new Aiplayer(group, "Strategy " + String.valueOf(i - 1), this.board, this.deck);
+			}
+			
 			
 		}
 		
-		//player2 = new Player(group, "AI1");
 		
-		//players.add(player1);
-		//players.add()
 		int turnIndex = 0;
 		Scanner scan = new Scanner(System.in);
 		
@@ -54,7 +57,7 @@ public class Game {
 									
 					
 					System.out.println("It’s your turn, what do you want to do?");
-					System.out.println("Enter 1 to add to board, 2 to split, 3 to split and add, 4 to display board, 5 to end turn: ");
+					System.out.println("Enter (1) to add to board, (2) to split, (3) to split and add, (4) to display board, (5) Get a tile from the deck and (6) to end your turn: ");
 					int n = scan.nextInt();
 					
 					if(n == 1){
@@ -80,6 +83,11 @@ public class Game {
 							
 						}else if (n == 5){
 							
+							players.get(0).addCardToHand(this.deck.dealTile());
+							break;
+							
+						}else if (n == 6){
+							
 							break;
 							
 						}else{
@@ -87,8 +95,7 @@ public class Game {
 						}
 					}
 			}else {
-				//computer
-				//function will be called play(Board board)	
+				players.get(turnIndex).play();
 			}
 			/*
 			if (turnIndex + 1 >= players.size()){
@@ -117,15 +124,17 @@ public class Game {
 	
 	
 	private ArrayList<Integer> addToBoard(){
-		String[] indexStrings = new String[13];
+		//String[] indexStrings = new String[13];
 				//call getPlayrsindex
 		System.out.println("Enter index(s) of the tiles you want to group and separate them by a single 'space ': ");
-		indexStrings = mainScan.nextLine().split(" ");
+		String[] indexStrings = mainScan.nextLine().split(" ");
 		System.out.println("YOU ENTERED : " + indexStrings[0] + " " + indexStrings[1]);
 		ArrayList<Integer> indexes = new ArrayList<Integer>();
 		int i = 0;
 		//indexStrings[i] != null find a better way to say this expression
-		while (i < 2){
+		//System.out.println("**************************************************************************************************************************************");
+		//System.out.println("ARRAY LENGTH: "+ indexStrings.length);
+		while (i < indexStrings.length){
 			System.out.println("Iteration: " + i);
 			indexes.add(Integer.valueOf(indexStrings[i]));
 			i++;
@@ -134,15 +143,17 @@ public class Game {
 	}
 	
 	private ArrayList<Integer> splitBoard(){
-		String[] indexStrings = new String[13];
+//		String[] indexStrings = new String[13];
 		board.toString();
 		
 		System.out.println("Enter X index and the Y index separated by a single 'space ' of where you want to split: ");
-		indexStrings = mainScan.nextLine().split(" ");
+		String[] indexStrings = mainScan.nextLine().split(" ");
 		
 		ArrayList<Integer> indexes = new ArrayList<Integer>();
 		int i = 0;
-		while (i < 2){
+		
+		//System.out.println("ARRAY LENGTH: "+ indexStrings.length);
+		while (i < indexStrings.length){
 			indexes.add(Integer.valueOf(indexStrings[i]));
 			i++;
 		}

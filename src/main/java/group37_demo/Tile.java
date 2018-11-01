@@ -4,6 +4,7 @@ import java.util.Comparator;
 public class Tile implements Comparable<Tile>{
 	private int value;
 	private TileValue color;
+	private String state = " ";
 	
 	public Tile(int value, TileValue color) {
 		this.value = value;
@@ -14,15 +15,22 @@ public class Tile implements Comparable<Tile>{
 	
 	public TileValue getColor() {return this.color;}
 	
+	
+	public void changeState(String state) {
+		
+		this.state = state;
+	}
+	
+	
 	 @Override
 	 public String toString() { 
-		 
+			 
 		 String color = "";
-		 if (this.color.toString() == "RED"){
+		 if (this.color.toString() == "_0RED"){
 			 color = "RE";
-		 }else if (this.color.toString() == "BLUE"){
+		 }else if (this.color.toString() == "_1BLUE"){
 			 color = "BL";
-		 }else if (this.color.toString() == "GREEN"){
+		 }else if (this.color.toString() == "_2GREEN"){
 			 color = "GR";
 		 }else{
 			 color = "BK";
@@ -31,14 +39,14 @@ public class Tile implements Comparable<Tile>{
 		 
 		 if (this.value < 10) {
 			 
-			 
-			 return String.format("[0" + this.value + " " + color + "]");
+			 return String.format(this.state +"{0" + this.value + " " + color + "}");
 		 }
-		 return String.format("[" + this.value + " " + color + "]"); // [10 REd]
+		 return String.format("{" + this.value + " " + color + "}"); // [10 REd]
 
 	 }
 
 	public int compareTo(Tile that) {
+		// TODO Auto-generated method stub
 		Integer thisValue = value;
 		Integer thatValue = value;
 		int compared = thisValue.compareTo(thatValue);
@@ -46,7 +54,10 @@ public class Tile implements Comparable<Tile>{
 			return this.color.toString().compareTo(that.color.toString());
 		}
 		return compared;
-	} 
+		
+	}
+
+	
 }
 
 
