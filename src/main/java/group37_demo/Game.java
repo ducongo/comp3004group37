@@ -15,6 +15,7 @@ public class Game {
 		//this.startGame(null);
 	}
 	private ArrayList<Player> players = new ArrayList<Player>();
+	private ArrayList<Aiplayer> aiplayers = new ArrayList<Aiplayer>();
 	public void startGame() {
 		gameRunning = true;
 		
@@ -30,14 +31,25 @@ public class Game {
 		for (int i = 0; i < 3; i++){
 			ArrayList<Tile> group = new ArrayList<Tile>();
 			for (int j = 0; j < 14; j++){
-				group.add(deck.dealTile());
+				group.add(deck.dealTileInit());
 			}
 			
-			if (i == 1) {
+			if (i == 0) {
 				Player p = new Player(group, "human");
 				players.add(p);
 			}else {
 				Aiplayer p = new Aiplayer(group, "Strategy " + String.valueOf(i - 1), this.board, this.deck);
+				
+				
+				if (p != null){
+					System.out.println("AI IS NOT NULL");
+				}else{
+					System.out.println("AI IS NULL");
+				}
+				players.add(p);
+				aiplayers.add(p);
+				this.deck.registerObserver(aiplayers.get(i - 1));
+				this.board.registerObserver(aiplayers.get(i - 1));
 			}
 			
 			

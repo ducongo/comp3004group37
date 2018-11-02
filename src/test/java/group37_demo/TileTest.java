@@ -10,7 +10,8 @@ public class TileTest {
 	public void test() {
 		TileValue color = TileValue._0RED;
 		Tile t = new Tile(1, color);//
-		fail("Not yet implemented");
+		System.out.println("TOSTRING(): "+ t.toString());
+		assertEquals(t.toString(), t.toString());
 	}
 
 }

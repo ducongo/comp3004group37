@@ -16,15 +16,26 @@ public class Deck implements Subject{
 		TileValue[] colors = {TileValue._2GREEN, TileValue._0RED, TileValue._3BLACK, TileValue._1BLUE};
 		
 		
-		for (int j = 0; j < 4; j++) {	
+		for (int j = 0; j < 4; j++) {
 			
-			for (int i = 1; i < 14; i++) {
-				
-				Tile tile = new Tile(i, colors[j]);
-				//System.out.println(tile.toString());
-				tileOfDeck.add(tile);
-				
+			for (int x = 0; x < 2; x++){
+				for (int i = 1; i < 14; i++) {
+					
+					Tile tile = new Tile(i, colors[j]);
+					//System.out.println(tile.toString());
+					tileOfDeck.add(tile);
+					
+				}
 			}
+			
+			
+		}
+		observers = new ArrayList<Observer>();
+		
+		if (observers != null){
+			System.out.println("DECK CLASS OBSERVER IS NOT NULL");;
+		}else{
+			System.out.println("DECK CLASS OBSERVER IS NULL");;
 		}
 		
 		this.shuffleTiles();
@@ -36,6 +47,12 @@ public class Deck implements Subject{
 	public int getTotalTilesInDeck() {
 		size = tileOfDeck.size();
 		return size;
+	}
+	
+	//Give players tiles when they are about to be created
+	public Tile dealTileInit() {
+		Tile dealtTile = tileOfDeck.remove(0);
+		return dealtTile;
 	}
 	
 	public Tile dealTile() {
@@ -50,7 +67,13 @@ public class Deck implements Subject{
 
 	public void registerObserver(Observer o) {
 		// TODO Auto-generated method stub
-		observers.add(o);
+		if(o != null){
+			System.out.println("Registerring observer in deck");
+			observers.add(o);
+		}else{
+			System.out.print("DECK OBSERVER NULL");
+		}
+		
 		
 	}
 
@@ -69,10 +92,15 @@ public class Deck implements Subject{
 	public void notifyObservers() {
 		// TODO Auto-generated method stub
 		
-		for (int i = 0; i < observers.size(); i++) {
-			Observer observer = (Observer)observers.get(i);
-			observer.update(this);
+		if (observers.size() > 0){
+			System.out.println("NOTIFYING OBEERVS");
+			for (int i = 0; i < observers.size(); i++) {
+				Observer observer = (Observer)observers.get(i);
+				observer.update(this);
+			}
 		}
+		
+		
 		
 	} 
 	

@@ -41,7 +41,7 @@ public class Tile implements Comparable<Tile>{
 			 
 			 return String.format(this.state +"{0" + this.value + " " + color + "}");
 		 }
-		 return String.format("{" + this.value + " " + color + "}"); // [10 REd]
+		 return String.format(this.state+ "{" + this.value + " " + color + "}"); //  {10 REd}
 
 	 }
 

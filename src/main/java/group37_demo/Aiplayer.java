@@ -9,6 +9,7 @@ public class Aiplayer extends Player implements Observer{
 	
 	public Aiplayer(ArrayList<Tile> tiles, String name, Board board, Deck deck) {
 		
+		
 		super(tiles, name);
 		this.board = board;
 		this.deck = deck;

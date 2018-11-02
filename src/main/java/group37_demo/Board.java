@@ -6,9 +6,15 @@ public class Board implements Subject{
 
 	protected ArrayList<ArrayList<Tile>> board = new ArrayList<ArrayList<Tile>>();
 	private ArrayList<Observer> observers;
-	
 	public Board() {
 		observers = new ArrayList<Observer>();
+		observers = new ArrayList<Observer>();
+		
+		if (observers != null){
+			System.out.println("DECK CLASS OBSERVER IS NOT NULL");;
+		}else{
+			System.out.println("DECK CLASS OBSERVER IS NULL");;
+		}
 	}
 	
 	public void addGroup(ArrayList<Tile> group) {
@@ -117,7 +123,12 @@ public class Board implements Subject{
 
 	public void registerObserver(Observer o) {
 		// TODO Auto-generated method stub
-		observers.add(o);
+		if(o != null){
+			System.out.println("Registerring observer in deck");
+			observers.add(o);
+		}else{
+			System.out.print("DECK OBSERVER NULL");
+		}
 		
 	}
 

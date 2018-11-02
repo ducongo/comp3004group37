@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="1" name="group37_demo.DeckTest" time="0.036" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="group37_demo.DeckTest" time="0.028" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
@@ -27,7 +27,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="Z:\eclipse-Neon\Workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf3116990653773900070.tmp"/>
+    <property name="classworlds.conf" value="Z:\eclipse-Neon\Workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf7471817098267070564.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_121\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_121/bin/server;C:/Program Files/Java/jre1.8.0_121/bin;C:/Program Files/Java/jre1.8.0_121/lib/amd64;C:\Program Files\Python35\Scripts\;C:\Program Files\Python35\;C:\Program Files\Python36\Scripts\;C:\Program Files\Python36\;C:\Program Files\Haskell\bin;C:\Program Files\Haskell Platform\8.4.3\lib\extralibs\bin;C:\Program Files\Haskell Platform\8.4.3\bin;C:\Program Files (x86)\ActiveState Komodo Edit 11\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Perl64\site\bin;C:\Perl64\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\Software\Languages\SQLite3;C:\Program Files\Atom x64;C:\Program Files\Java\jdk-10.0.1\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Haskell Platform\8.4.3\mingw\bin;C:\Program Files\CMake\bin;C:\Program Files\nodejs\;C:\Program Files\MongoDB\Server\4.0\bin;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Roaming\cabal\bin;C:\Software\Languages\Haskell\bin;C:\Users\parfaitkingwaya\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Program Files\Java\jdk1.8.0_121\bin;L:\bin;C:\Software\Languages\eclipse-Neon;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -44,7 +44,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_121\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -61,41 +61,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="group37_demo.DeckTest" name="testNumberofTile" time="0.036">
-    <failure message="expected:&lt;104&gt; but was:&lt;52&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;104&gt; but was:&lt;52&gt;
-	at junit.framework.Assert.fail(Assert.java:57)
-	at junit.framework.Assert.failNotEquals(Assert.java:329)
-	at junit.framework.Assert.assertEquals(Assert.java:78)
-	at junit.framework.Assert.assertEquals(Assert.java:234)
-	at junit.framework.Assert.assertEquals(Assert.java:241)
-	at junit.framework.TestCase.assertEquals(TestCase.java:409)
-	at group37_demo.DeckTest.testNumberofTile(DeckTest.java:19)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at junit.framework.TestCase.runTest(TestCase.java:176)
-	at junit.framework.TestCase.runBare(TestCase.java:141)
-	at junit.framework.TestResult$1.protect(TestResult.java:122)
-	at junit.framework.TestResult.runProtected(TestResult.java:142)
-	at junit.framework.TestResult.run(TestResult.java:125)
-	at junit.framework.TestCase.run(TestCase.java:129)
-	at junit.framework.TestSuite.runTest(TestSuite.java:252)
-	at junit.framework.TestSuite.run(TestSuite.java:247)
-	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:86)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</failure>
-  </testcase>
+  <testcase classname="group37_demo.DeckTest" name="testNumberofTile" time="0.028"/>
   <testcase classname="group37_demo.DeckTest" name="testDeck" time="0"/>
 </testsuite>
