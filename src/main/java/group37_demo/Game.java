@@ -60,12 +60,15 @@ public class Game {
 		Scanner scan = new Scanner(System.in);
 		
 		while(!this.isGameOver()) {
+			
 			if (turnIndex == 0) {
-				
+				boolean shoudDraw = true;//if the payer doesn't make a move then draw a card by default before ending their turn
 				while(true) {
 					System.out.println(board.toString());
 					//display number of tiles remaining for each players starting with player 1
-					System.out.println("player: " + players.get(turnIndex) + " Number of remaining tiles: " + players.get(turnIndex).getHandSize());
+					for (int i = 1; i < players.size(); i++){
+						System.out.println("Player: " + players.get(turnIndex).getName() + " Number of remaining tiles: " + players.get(turnIndex).getHandSize());
+					}				
 									
 					
 					System.out.println("It’s your turn, what do you want to do?");
@@ -73,16 +76,19 @@ public class Game {
 					int n = scan.nextInt();
 					
 					if(n == 1){
+						shoudDraw = false;
 						players.get(turnIndex).toString();
 							
 						//create a set of tiles from the players hand and return it and add to the game board
 						this.board.addGroup(this.players.get(turnIndex).createSet(this.addToBoard()));
 						
 						}else if (n == 2){
+							shoudDraw = false;
 							
 							this.board.split(this.splitBoard().get(0).intValue(), this.splitBoard().get(1).intValue());
 							
 						}else if (n == 3){
+							shoudDraw = false;
 							System.out.println(board.toString());
 							players.get(turnIndex).toString();
 						//call getPlayrsindex
@@ -90,16 +96,18 @@ public class Game {
 							
 							
 						}else if (n == 4){
-							
+							shoudDraw = false;
 							System.out.println(board.toString());
 							
 						}else if (n == 5){
-							
+							shoudDraw = false;
 							players.get(0).addCardToHand(this.deck.dealTile());
 							break;
 							
 						}else if (n == 6){
-							
+							if (shoudDraw == true){
+								players.get(0).addCardToHand(this.deck.dealTile());
+							}
 							break;
 							
 						}else{
@@ -109,13 +117,13 @@ public class Game {
 			}else {
 				players.get(turnIndex).play();
 			}
-			/*
+			
 			if (turnIndex + 1 >= players.size()){
 					turnIndex = 0;
 			}else{
 					turnIndex +=1;
 			}
-			*/
+			
 		}
 	}
 		
