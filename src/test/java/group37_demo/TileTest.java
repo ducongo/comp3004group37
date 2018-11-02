@@ -8,7 +8,7 @@ public class TileTest {
 
 	@Test
 	public void test() {
-		TileValue color = TileValue.RED;
+		TileValue color = TileValue._0RED;
 		Tile t = new Tile(1, color);//
 		fail("Not yet implemented");
 	}

@@ -10,7 +10,7 @@ public class TileValueEnumTESt {
 	@Test
 	public void testRed() {
 		
-		String value = TileValue.RED.toString();
+		String value = TileValue._0RED.toString();
 		System.out.println(value);
 		assertEquals("RED", value);
 	}
@@ -18,7 +18,7 @@ public class TileValueEnumTESt {
 	@Test
 	public void testGreen() {
 		
-		String value = TileValue.GREEN.toString();
+		String value = TileValue._2GREEN.toString();
 		System.out.println(value);
 		assertEquals("GREEN", value);
 	}
@@ -26,7 +26,7 @@ public class TileValueEnumTESt {
 	@Test
 	public void testBlue() {
 		
-		String value = TileValue.BLUE.toString();
+		String value = TileValue._1BLUE.toString();
 		System.out.println(value);
 		assertEquals("BLUE", value);
 	}
@@ -34,7 +34,7 @@ public class TileValueEnumTESt {
 	@Test
 	public void testBlack() {
 		
-		String value = TileValue.BLACK.toString();
+		String value = TileValue._3BLACK.toString();
 		System.out.println(value);
 		assertEquals("BLACK", value);
 	}
