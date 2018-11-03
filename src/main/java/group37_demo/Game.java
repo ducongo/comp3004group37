@@ -63,11 +63,13 @@ public class Game {
 			
 			if (turnIndex == 0) {
 				boolean shoudDraw = true;//if the payer doesn't make a move then draw a card by default before ending their turn
+				
 				while(true) {
 					System.out.println(board.toString());
+					System.out.println("Your tile(s): " + players.get(turnIndex).toString());
 					//display number of tiles remaining for each players starting with player 1
 					for (int i = 1; i < players.size(); i++){
-						System.out.println("Player: " + players.get(turnIndex).getName() + " Number of remaining tiles: " + players.get(turnIndex).getHandSize());
+						System.out.println("Player: " + players.get(i).getName() + " Number of remaining tiles: " + players.get(i).getHandSize());
 					}				
 									
 					
@@ -75,10 +77,12 @@ public class Game {
 					System.out.println("Enter (1) to add to board, (2) to split, (3) to split and add, (4) to display board, (5) Get a tile from the deck and (6) to end your turn: ");
 					int n = scan.nextInt();
 					
+					
+					
+					
 					if(n == 1){
-						shoudDraw = false;
-						players.get(turnIndex).toString();
-							
+						shoudDraw = false;				
+													
 						//create a set of tiles from the players hand and return it and add to the game board
 						this.board.addGroup(this.players.get(turnIndex).createSet(this.addToBoard()));
 						
@@ -90,7 +94,7 @@ public class Game {
 						}else if (n == 3){
 							shoudDraw = false;
 							System.out.println(board.toString());
-							players.get(turnIndex).toString();
+							//players.get(turnIndex).toString();
 						//call getPlayrsindex
 							this.board.splitRemove(this.splitBoard().get(0).intValue(), this.splitBoard().get(1).intValue(), this.players.get(turnIndex).createSet(this.addToBoard()));
 							
@@ -115,6 +119,8 @@ public class Game {
 						}
 					}
 			}else {
+				System.out.println("STRATEGIES ARE PLAYING");
+				
 				players.get(turnIndex).play();
 			}
 			
@@ -123,6 +129,7 @@ public class Game {
 			}else{
 					turnIndex +=1;
 			}
+			System.out.println("***********************************************: " + turnIndex);
 			
 		}
 	}

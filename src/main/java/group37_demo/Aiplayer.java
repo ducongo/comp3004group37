@@ -17,7 +17,9 @@ public class Aiplayer extends Player implements Observer{
 	
 	public void play() {
 		
+		System.out.println("Strategy: " + name + " is playing");
 		this.hand.addTile(deck.dealTile());
+		
 	}
 	
 	

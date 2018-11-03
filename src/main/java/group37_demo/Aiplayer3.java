@@ -2,12 +2,12 @@ package group37_demo;
 
 import java.util.ArrayList;
 
-public class Aiplayer extends Player implements Observer{
+public class Aiplayer3 extends Player implements Observer{
 	
 	private Board board;
 	private Deck deck;
 	
-	public Aiplayer(ArrayList<Tile> tiles, String name, Board board, Deck deck) {
+	public Aiplayer3(ArrayList<Tile> tiles, String name, Board board, Deck deck) {
 		
 		
 		super(tiles, name);
@@ -17,7 +17,7 @@ public class Aiplayer extends Player implements Observer{
 	
 	public void play() {
 		
-		//this.hand.addTile(deck.dealTile());
+		this.hand.addTile(deck.dealTile());
 	}
 	
 	
