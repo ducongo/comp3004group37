@@ -161,7 +161,7 @@ public class Board implements Subject{
 	public void registerObserver(Observer o) {
 		// TODO Auto-generated method stub
 		if(o != null){
-			System.out.println("Registerring observer in deck");
+			 
 			observers.add(o);
 		}else{
 			System.out.print("DECK OBSERVER NULL");

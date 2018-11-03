@@ -74,9 +74,8 @@ public class Game {
 									
 					
 					System.out.println("It’s your turn, what do you want to do?");
-					System.out.println("Enter (1) to add to board, (2) to split, (3) to split and add, (4) to display board, (5) Get a tile from the deck and (6) to end your turn: ");
+					System.out.println("Enter (1) to add to board, (2) to split, (3) to split and add, (4) move tiles, (5) to display board, (6) Get a tile from the deck and (7) to end your turn: ");
 					int n = scan.nextInt();
-					
 					
 					
 					
@@ -100,15 +99,21 @@ public class Game {
 							
 							
 						}else if (n == 4){
+							shoudDraw = true;
+							System.out.println(board.toString());
+							
+							this.board.move(this.moveTiles().get(0), this.moveTiles().get(1), this.moveTiles().get(2), this.moveTiles().get(3), this.moveTiles().get(4));
+							
+						}else if (n == 5){
 							shoudDraw = false;
 							System.out.println(board.toString());
 							
-						}else if (n == 5){
+						}else if (n == 6){
 							shoudDraw = false;
 							players.get(0).addCardToHand(this.deck.dealTile());
 							break;
 							
-						}else if (n == 6){
+						}else if (n == 7){
 							if (shoudDraw == true){
 								players.get(0).addCardToHand(this.deck.dealTile());
 							}
@@ -183,6 +188,44 @@ public class Game {
 		while (i < indexStrings.length){
 			indexes.add(Integer.valueOf(indexStrings[i]));
 			i++;
+		}
+		
+		return indexes;
+	}
+	
+	private ArrayList<Integer> moveTiles(){
+		
+		board.toString();
+		
+		System.out.println("Enter X index and the Y index separated by a single 'space ' of where you want to start grouping tiles: ");
+		String[] indexStrings = mainScan.nextLine().split(" ");
+		
+		System.out.println("Enter the amount of tiles you want to move from that index: ");
+		String[] indexStrings2 = mainScan.nextLine().split(" ");
+		
+		System.out.println("Enter X index and the Y index separated by a single 'space ' of where you want to move the tile(s): ");
+		String[] indexStrings3 = mainScan.nextLine().split(" ");
+		
+		
+		ArrayList<Integer> indexes = new ArrayList<Integer>();
+		int i = 0;
+		
+		//System.out.println("ARRAY LENGTH: "+ indexStrings.length);
+		while (i < indexStrings.length){
+			indexes.add(Integer.valueOf(indexStrings[i]));
+			i++;
+		}
+		
+		for (int a = 0; a < 5; a++) {
+			
+			if (a < 2) {
+				indexes.add(Integer.valueOf(indexStrings[a]));
+			}else if (a == 2) {
+				indexes.add(Integer.valueOf(indexStrings2[a]));
+			}else {
+				indexes.add(Integer.valueOf(indexStrings2[a]));
+			}
+			
 		}
 		
 		return indexes;
