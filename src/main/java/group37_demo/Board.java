@@ -10,11 +10,7 @@ public class Board implements Subject{
 		observers = new ArrayList<Observer>();
 		observers = new ArrayList<Observer>();
 		
-		if (observers != null){
-			System.out.println("DECK CLASS OBSERVER IS NOT NULL");;
-		}else{
-			System.out.println("DECK CLASS OBSERVER IS NULL");;
-		}
+		
 	}
 	
 	public void addGroup(ArrayList<Tile> group) {
@@ -83,15 +79,6 @@ public class Board implements Subject{
 			}
 		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 	
 	
@@ -116,9 +103,7 @@ public class Board implements Subject{
 	
 	@Override
 	 public String toString() { 
-		System.out.println("PRINTING BOARD");
-		System.out.println("Board.size() = " + board.size());
-		//stem.out.println("Board.get(0).size() = " + board.get(0));
+		
 		String s = "";
 		int biggestSet = 0; //this variable will hold the biggest set size for matrix formatting
 		
@@ -163,10 +148,7 @@ public class Board implements Subject{
 		if(o != null){
 			 
 			observers.add(o);
-		}else{
-			System.out.print("DECK OBSERVER NULL");
 		}
-		
 	}
 
 

@@ -32,11 +32,7 @@ public class Deck implements Subject{
 		}
 		observers = new ArrayList<Observer>();
 		
-		if (observers != null){
-			System.out.println("DECK CLASS OBSERVER IS NOT NULL");;
-		}else{
-			System.out.println("DECK CLASS OBSERVER IS NULL");;
-		}
+		
 		
 		this.shuffleTiles();
 		
@@ -68,10 +64,8 @@ public class Deck implements Subject{
 	public void registerObserver(Observer o) {
 		// TODO Auto-generated method stub
 		if(o != null){
-			System.out.println("Registerring observer in deck");
+			
 			observers.add(o);
-		}else{
-			System.out.print("DECK OBSERVER NULL");
 		}
 		
 		
@@ -93,7 +87,7 @@ public class Deck implements Subject{
 		// TODO Auto-generated method stub
 		
 		if (observers.size() > 0){
-			System.out.println("NOTIFYING OBEERVS");
+			//System.out.println("NOTIFYING OBEERVS");
 			for (int i = 0; i < observers.size(); i++) {
 				Observer observer = (Observer)observers.get(i);
 				observer.update(this);

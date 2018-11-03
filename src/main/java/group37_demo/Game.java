@@ -40,12 +40,6 @@ public class Game {
 			}else {
 				Aiplayer p = new Aiplayer(group, "Strategy " + String.valueOf(i - 1), this.board, this.deck);
 				
-				
-				if (p != null){
-					System.out.println("AI IS NOT NULL");
-				}else{
-					System.out.println("AI IS NULL");
-				}
 				players.add(p);
 				aiplayers.add(p);
 				this.deck.registerObserver(aiplayers.get(i - 1));
@@ -134,7 +128,7 @@ public class Game {
 			}else{
 					turnIndex +=1;
 			}
-			System.out.println("***********************************************: " + turnIndex);
+			
 			
 		}
 	}
@@ -160,14 +154,12 @@ public class Game {
 				//call getPlayrsindex
 		System.out.println("Enter index(s) of the tiles you want to group and separate them by a single 'space ': ");
 		String[] indexStrings = mainScan.nextLine().split(" ");
-		System.out.println("YOU ENTERED : " + indexStrings[0] + " " + indexStrings[1]);
+		
 		ArrayList<Integer> indexes = new ArrayList<Integer>();
 		int i = 0;
-		//indexStrings[i] != null find a better way to say this expression
-		//System.out.println("**************************************************************************************************************************************");
-		//System.out.println("ARRAY LENGTH: "+ indexStrings.length);
+		
 		while (i < indexStrings.length){
-			System.out.println("Iteration: " + i);
+			
 			indexes.add(Integer.valueOf(indexStrings[i]));
 			i++;
 		}
@@ -175,7 +167,7 @@ public class Game {
 	}
 	
 	private ArrayList<Integer> splitBoard(){
-//		String[] indexStrings = new String[13];
+
 		board.toString();
 		
 		System.out.println("Enter X index and the Y index separated by a single 'space ' of where you want to split: ");
@@ -184,7 +176,7 @@ public class Game {
 		ArrayList<Integer> indexes = new ArrayList<Integer>();
 		int i = 0;
 		
-		//System.out.println("ARRAY LENGTH: "+ indexStrings.length);
+		
 		while (i < indexStrings.length){
 			indexes.add(Integer.valueOf(indexStrings[i]));
 			i++;
@@ -210,11 +202,7 @@ public class Game {
 		ArrayList<Integer> indexes = new ArrayList<Integer>();
 		int i = 0;
 		
-		//System.out.println("ARRAY LENGTH: "+ indexStrings.length);
-		while (i < indexStrings.length){
-			indexes.add(Integer.valueOf(indexStrings[i]));
-			i++;
-		}
+		
 		
 		for (int a = 0; a < 5; a++) {
 			
@@ -223,7 +211,7 @@ public class Game {
 			}else if (a == 2) {
 				indexes.add(Integer.valueOf(indexStrings2[a]));
 			}else {
-				indexes.add(Integer.valueOf(indexStrings2[a]));
+				indexes.add(Integer.valueOf(indexStrings3[a]));
 			}
 			
 		}
