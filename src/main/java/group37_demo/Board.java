@@ -59,6 +59,43 @@ public class Board implements Subject{
 		
 	}
 	
+	public void move(int indexX, int indexY, int numElementToMove, int newX, int newY) {
+		
+		ArrayList<Tile> newGroup = new ArrayList<Tile>();
+		
+		for(int i = indexX; i < (indexX + numElementToMove); i++) {
+			
+			newGroup.add(this.board.get(indexY).remove(i));
+			
+		}
+		
+		if(newX > this.board.get(newY).size()) {
+			
+			for (int i = 0; i < numElementToMove; i++) {
+				
+				this.board.get(newY).add(newGroup.get(i));
+			}
+		}else {
+			for (int i = newX; i < (newX + numElementToMove); i++) {
+				
+				this.board.get(newY).add(i, newGroup.get(i));
+				
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
 	private void highlightTiles(ArrayList<Tile> tiles, String state) {
 		
 		for (int i = 0; i < tiles.size(); i++) {
