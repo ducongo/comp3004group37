@@ -19,14 +19,17 @@ public class Aiplayer3 extends Player implements Observer{
 		
 		System.out.println("Player p3's turn ");
 		this.hand.addTile(deck.dealTile());
+		
+		this.hand.createMeld(null);
 		/*
-		this.hand.createMeld(indexes);
-		if (points of meld >= 30) {
-			board.add();
+		if (initValue >= 30) {
+			
+			//board.add();
 		} else {
-			ai3 draw a card
+			//ai3 draw a card
 		}
 		*/
+		
 	}
 	
 	
