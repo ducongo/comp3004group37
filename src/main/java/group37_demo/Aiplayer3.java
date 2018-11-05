@@ -15,21 +15,24 @@ public class Aiplayer3 extends Player implements Observer{
 		this.deck = deck;
 	}
 	
-	public void play() {
+	public void play(ArrayList<Integer> indexes, ArrayList<Tile> group, Tile tile) {
 		
 		System.out.println("Player p3's turn ");
 		this.hand.addTile(deck.dealTile());
 		
-		this.hand.createMeld(null);
-		/*
-		if (initValue >= 30) {
-			
-			//board.add();
-		} else {
-			//ai3 draw a card
+		this.hand.createMeld(indexes);
+		if(this.hand.getMeldValue() >= 30) {
+			board.addGroup(group);
+		}else {
+			this.hand.addTile(tile);
 		}
-		*/
 		
+	}
+	
+	public void Ai3Win() {
+		if (this.hand.isEmpty()) {
+			System.out.println("AI 3 is winner");
+		}
 	}
 	
 	
