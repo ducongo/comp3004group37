@@ -41,6 +41,20 @@ public class Hand {
 		Collections.sort(tiles);
 	}
 	
+	public int getMeldValue() {
+		
+		int value = 0;
+		
+		if(this.tiles.isEmpty())
+			return value;
+		else {
+			for(int i = 0; i < this.tiles.size(); i++) {
+				value += this.tiles.get(i).getValue();
+			}
+			return value;
+		}		
+	}
+	
 	
 	@Override
 	 public String toString() { 
